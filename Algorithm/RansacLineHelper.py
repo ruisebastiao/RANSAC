@@ -3,8 +3,8 @@ import random
 import numpy as np
 import math
 from sklearn.linear_model import LinearRegression
-from RANSAC.Common import Point
-from RANSAC.Common import LineModel
+from Common import Point
+from Common import LineModel
 from typing import Dict, List
 
 class RansacLineHelper(object):

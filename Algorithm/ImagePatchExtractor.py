@@ -1,7 +1,7 @@
 import numpy as np
 from typing import Dict, List
-from RANSAC.Common import Point
-from RANSAC.Common import PatchInfo,PatchResults
+from Common import Point
+from Common import PatchInfo,PatchResults
 
 
 class ImagePatchExtractor(object):

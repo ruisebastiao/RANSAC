@@ -1,5 +1,5 @@
-from RANSAC.Common import Point
-from RANSAC.Common import CircleModel
+from Common import Point
+from Common import CircleModel
 from typing import List, Set, Dict, Tuple, Optional
 from functools import reduce
 

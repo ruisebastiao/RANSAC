@@ -1,10 +1,10 @@
 import numpy as np
 from typing import Dict, List
-from RANSAC.Common import LineModel
-from RANSAC.Algorithm import RansacLineHelper
-from RANSAC.Common import Util
-from RANSAC.Common import Point
-from RANSAC.Common import PatchInfo,PatchResults
+from Common import LineModel
+from Algorithm import RansacLineHelper
+from Common import Util
+from Common import Point
+from Common import PatchInfo,PatchResults
 from .ImagePatchExtractor import ImagePatchExtractor
 import skimage
 

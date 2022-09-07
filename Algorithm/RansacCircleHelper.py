@@ -2,9 +2,9 @@ from typing import List, Set, Dict, Tuple, Optional
 import math
 import statistics as stats
 import random
-from RANSAC.Common import Point
-from RANSAC.Common import CircleModel
-from RANSAC.Algorithm import BullockCircleFitting
+from Common import Point
+from Common import CircleModel
+from Algorithm import BullockCircleFitting
 import threading
 import sys
 

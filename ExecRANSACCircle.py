@@ -11,26 +11,30 @@ from Common import CircleModel
 from Common import Point
 from Algorithm import RansacCircleHelper
 import traceback
-from MatplotUtil import plot_new_points_over_existing_points
+# from MatplotUtil import plot_new_points_over_existing_points
 
 def run(filename,threshold,inlier,sampling_fraction=0.25,matplot=False):
     print("Going to process file:%s" % (filename))
     folder_script=os.path.dirname(__file__)
     file_noisy_circle=os.path.join(folder_script,"./input/",filename)
     try:
-        np_image=skimage.io.imread(file_noisy_circle,as_gray=True)
+        # np_image=skimage.io.imread(file_noisy_circle,as_gray=True)
 
         #
         #Iterate over all cells of the NUMPY array and convert to array of Point classes
         #
-        lst_all_points=Util.create_points_from_numpyimage(np_image)
+
+        lst=list()
+        # p=Point(x,y_cartesian)
+        # lst.append(p)
+
         #
         #begin RANSAC
         #
         helper=RansacCircleHelper()
         helper.threshold_error=threshold
         helper.threshold_inlier_count=inlier
-        helper.add_points(lst_all_points)
+        helper.add_points(lst)
         helper.sampling_fraction=sampling_fraction
         best_model=helper.run() 
         print("RANSAC-complete") 
@@ -51,8 +55,8 @@ def run(filename,threshold,inlier,sampling_fraction=0.25,matplot=False):
         skimage.io.imsave(file_result,np_superimposed)
         print("Results saved to file:%s" % (file_result))
         print("------------------------------------------------------------")
-        if (matplot==True):
-            plot_new_points_over_existing_points(lst_all_points,new_points,"Outcome of RANSAC algorithm","Original points", "RANSAC")
+        # if (matplot==True):
+        #     plot_new_points_over_existing_points(lst_all_points,new_points,"Outcome of RANSAC algorithm","Original points", "RANSAC")
 
     except Exception as e:
         tb = traceback.format_exc()
